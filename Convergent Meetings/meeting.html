@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Meeting | Convergent Meetings</title>
+</head>
+<body>
+    <div class="meet" id="meet"></div>
+</body>
+<script src='https://meet.jit.si/external_api.js'></script>
+<script type="text/javascript">
+    var MeetingCode = localStorage.getItem("MeetingCode");
+    const domain = 'meet.jit.si';
+const options = {
+    roomName: MeetingCode,
+    height: 750,
+    parentNode: document.querySelector('#meet'),
+    lang: 'en', 
+    configOverwrite: { 
+        startWithAudioMuted: true
+     },
+    interfaceConfigOverwrite: { DISABLE_DOMINANT_SPEAKER_INDICATOR: true },
+    userInfo: {
+        email: 'info@exclusiveabodes.co.za',
+        displayName: ''
+    }
+};
+const api = new JitsiMeetExternalAPI(domain, options);
+</script>
+</html>
